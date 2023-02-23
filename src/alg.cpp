@@ -4,8 +4,11 @@
 
 
 bool checkPrime(uint64_t value) {
-  if (value == 2 || value == 3) return true;
-  if ((value * value) % 24 == 1) return true; else return false;
+  int i;
+  for (i = 2; i * i <= value; i++) {
+	if (value % i == 0) return false;
+  }
+  return true;
 }
 
 uint64_t nPrime(uint64_t n) {
